@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd1q5ix07u3b7"]
+
+[ext_resource type="Texture2D" uid="uid://ceu1uglrkt6xg" path="res://Resources/Background/Base.png" id="1_davsp"]
+[ext_resource type="Texture2D" uid="uid://ch4ea0mudbhv3" path="res://Resources/Background/Base2.jpg" id="1_m4128"]
+[ext_resource type="Texture2D" uid="uid://2p62jw28vvrw" path="res://Resources/Background/Layer1.png" id="2_gql35"]
+[ext_resource type="Texture2D" uid="uid://cfhxl7cq71hka" path="res://Resources/Background/Layer2.PNG" id="3_xrn8c"]
+[ext_resource type="Texture2D" uid="uid://qiavxgshma42" path="res://Resources/Background/Layer3.PNG" id="4_dca7h"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer5"]
+position = Vector2(0, 599)
+scale = Vector2(1.09402, 0.758359)
+texture = ExtResource("1_m4128")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+scale = Vector2(1.00156, 1)
+texture = ExtResource("1_davsp")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("2_gql35")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("3_xrn8c")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("4_dca7h")
+centered = false

@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvm1cgx2kvpf7"]
+
+[ext_resource type="Script" path="res://Scenes/congratulations.gd" id="1_k8k8n"]
+[ext_resource type="Texture2D" uid="uid://c4hfpxja5np5y" path="res://Resources/MainMenu_BG.png" id="2_7qqe1"]
+[ext_resource type="FontFile" uid="uid://ccn3qo2byemnl" path="res://Fonts/dogicapixelbold.ttf" id="3_dudww"]
+[ext_resource type="FontFile" uid="uid://b7rjfnja5vu4h" path="res://Fonts/dogicapixel.ttf" id="4_hs05p"]
+[ext_resource type="Texture2D" uid="uid://c2pprfquxb21x" path="res://Resources/Buttons/PlayAgain_Normal.png" id="5_sjuv2"]
+[ext_resource type="Texture2D" uid="uid://ctoejnrhg1rl8" path="res://Resources/Buttons/PlayAgain_Hover.png" id="6_plf7q"]
+[ext_resource type="Texture2D" uid="uid://t8epm756lqay" path="res://Resources/Buttons/Quit_Normal.png" id="7_8p0gp"]
+[ext_resource type="Texture2D" uid="uid://bc2pf0q7716jr" path="res://Resources/Buttons/Quit_Hover.png" id="8_3gpgu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ficf0"]
+texture = ExtResource("2_7qqe1")
+
+[node name="congrats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k8k8n")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ficf0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.5
+offset_top = -163.0
+offset_right = 357.5
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.287091, 0.419204, 0.0385127, 1)
+theme_override_colors/font_outline_color = Color(0.219608, 0.32549, 0.0235294, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_dudww")
+theme_override_font_sizes/font_size = 65
+text = "CONGRATULATIONS"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.5
+offset_top = -98.0
+offset_right = 357.5
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.219608, 0.32549, 0.0235294, 1)
+theme_override_colors/font_outline_color = Color(0.219608, 0.32549, 0.0235294, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_hs05p")
+theme_override_font_sizes/font_size = 30
+text = "YOU  WON!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.5
+offset_top = 158.0
+offset_right = 338.5
+offset_bottom = 305.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Button" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+texture_normal = ExtResource("5_sjuv2")
+texture_hover = ExtResource("6_plf7q")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Button2" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+texture_normal = ExtResource("7_8p0gp")
+texture_hover = ExtResource("8_3gpgu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_playagain_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_exit_pressed"]

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://cwg6m6axk6dex"]
+
+[ext_resource type="Resource" uid="uid://57pg2pxc6oyu" path="res://Resources/Character/Squirrel/Answer.tres" id="2_atpsq"]
+[ext_resource type="Texture2D" uid="uid://brpdcfmd50qsb" path="res://Resources/Character/test.png" id="3_5l14p"]
+
+[sub_resource type="GDScript" id="GDScript_xgmiv"]
+script/source = "extends Resource
+class_name Dialogue
+
+@export_category(\"Information\")
+@export var texture : Texture2D
+@export var name : String
+@export var dialogue : String
+
+@export_category(\"Linking Node\")
+@export var path_option : String
+@export var options : Array[Dialogue]
+"
+
+[resource]
+script = SubResource("GDScript_xgmiv")
+texture = ExtResource("3_5l14p")
+name = "Squirrel"
+dialogue = "Help Me"
+path_option = ""
+options = Array[SubResource("GDScript_xgmiv")]([ExtResource("2_atpsq")])
